@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Link } from 'react-router-dom';
+import logo from '../../resources/logo.svg';
 import './Header.css';
 
 function Header() {
@@ -7,21 +8,22 @@ function Header() {
 
   const handleLogout = () => {
     localStorage.removeItem('userId');
+    window.location.href = '/login';
   };
 
   return (
     <header className="header">
       <img src={logo} className="logo" alt="logo" />
       <nav className="nav">
-        <a href="/">Home</a>
-        <a href="/tasks">Tasks</a>
-        <a href="/profile">Profile</a>
+        <Link to="/">Home</Link>
+        <Link to="/tasks">Tasks</Link>
+        <Link to="/profile">Profile</Link>
       </nav>
       <div className="auth">
         {userId ? (
           <button onClick={handleLogout}>Logout</button>
         ) : (
-          <a href="/login">Login</a>
+          <Link to="/login">Login</Link>
         )}
       </div>
     </header>
