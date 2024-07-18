@@ -7,6 +7,7 @@ import Header from '../Common/Header';
 import Login from '../Auth/Login';
 import Registration from '../Auth/Register';
 import Home from '../Home/Home';
+import TaskSearch from '../Tasks/TaskSearch';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/tasks" element={<TaskView />} />
+        <Route path="/tasksearch" element={<TaskSearch />} />
         <Route path="/profile" element={<UserInformation />} />
         <Route path='/register' element={<Registration/>}/>
       </Routes>

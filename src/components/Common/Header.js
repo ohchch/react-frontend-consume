@@ -16,6 +16,7 @@ function Header() {
       <img src={logo} className="logo" alt="logo" />
       <nav className="nav">
         <Link to="/">Home</Link>
+        <Link to="/tasksearch">Search Tasks</Link>
         <Link to="/tasks">Tasks</Link>
         <Link to="/profile">Profile</Link>
       </nav>
