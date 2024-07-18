@@ -17,8 +17,9 @@ const TaskSearch = () => {
     const handleSearch = async () => {
         try {
             const params = { userId, query: searchQuery };
+            console.log(params);
 
-            const response = await axios.get('/api/tasks', { params });
+            const response = await axios.get('http://localhost:8080/api/tasks', { params });
             setTasks(response.data);
         } catch (error) {
             console.error('Error fetching tasks', error);
