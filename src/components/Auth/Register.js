@@ -19,10 +19,14 @@ function Registration() {
         e.preventDefault();
         axios.post('http://localhost:8080/api/users/register', registerData)
             .then(response => {
-                setMessage('Registration successful!');
+                setMessage(response.data.message); // 获取后端返回的信息
             })
             .catch(error => {
-                setMessage('Registration failed.');
+                if (error.response && error.response.data.message) {
+                    setMessage(error.response.data.message);
+                } else {
+                    setMessage('Registration failed.');
+                }
             });
     };
 

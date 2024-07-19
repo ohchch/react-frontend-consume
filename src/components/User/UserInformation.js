@@ -16,8 +16,8 @@ function UserInformation() {
 
                 console.log(`Fetching user information for user ID: ${userId}`);
                 const response = await axios.get(`http://localhost:8080/api/users/${userId}`);
-                console.log('User data fetched:', response.data); // 调试输出
-                setUser(response.data);
+                console.log('User data fetched:', response.data);
+                setUser(response.data.user); 
             } catch (error) {
                 setMessage('Error fetching user information.');
                 console.error('Error fetching user information:', error);
