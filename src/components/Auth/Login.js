@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // 导入 Link 组件
+import { Link } from 'react-router-dom';
+import OAuthLogin from './OAuthLogin'; // 引入OAuthLogin组件
 import './Login.css';
 
 function Login() {
@@ -20,10 +21,10 @@ function Login() {
         e.preventDefault();
         axios.post('http://localhost:8080/api/users/login', loginData)
             .then(response => {
-                const userId = response.data.userId; // 假设后端返回的数据包含userId
-                localStorage.setItem('userId', userId); // 将用户ID存储到本地存储
+                const userId = response.data.userId;
+                localStorage.setItem('userId', userId);
                 setMessage('Login successful!');
-                window.location.href = '/'; // 登录成功后重定向到首页
+                window.location.href = '/';
             })
             .catch(error => {
                 setMessage('Invalid username or password.');
@@ -55,7 +56,8 @@ function Login() {
                 <button type="submit">Login</button>
             </form>
             {message && <p>{message}</p>}
-            <p>Don't have an account? <Link to="/register">Register here</Link></p> {/* 注册链接 */}
+            <OAuthLogin /> 
+            <p>Don't have an account? <Link to="/register">Register here</Link></p>
         </div>
     );
 }
