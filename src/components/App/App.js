@@ -8,6 +8,9 @@ import Registration from '../Auth/Register';
 import Home from '../Home/Home';
 import TaskSearch from '../Tasks/TaskSearch';
 import OAuthCallback from '../Auth/OAuthCallback';
+import AboutUs from '../InfoPages/AboutUs';
+import TermsAndConditions from '../InfoPages/TermsAndConditions';
+import ContactUs from '../InfoPages/ContactUs';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Route path="/profile" element={<UserInformation />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/oauth/callback" element={<OAuthCallback />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
       </Routes>
     </Router>
   );

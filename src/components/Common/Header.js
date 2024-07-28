@@ -28,6 +28,9 @@ function Header() {
         <Link to="/tasksearch">Search Tasks</Link>
         <Link to="/tasks">Tasks</Link>
         <Link to="/profile">Profile</Link>
+        <Link to="/contact">Contact Us</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/terms">Terms and Conditions</Link>
       </nav>
       <div className="auth">
         <button onClick={() => window.location.href = '/login'}>Login</button>

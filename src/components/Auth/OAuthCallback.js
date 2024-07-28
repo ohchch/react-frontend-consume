@@ -75,20 +75,20 @@ function OAuthCallback() {
         <div>
             {loadingMessage}
             <div>
-                <h2>用户信息</h2>
+                <h2>user Info</h2>
                 <p><strong>Provider UID:</strong> {userInfo.providerUid}</p>
                 <p><strong>Email:</strong> {userInfo.email}</p>
             </div>
             {sessionInfo && (
                 <div>
-                    <h2>当前会话信息</h2>
-                    <p><strong>会话ID:</strong> {sessionInfo.$id}</p>
-                    <p><strong>创建时间:</strong> {sessionInfo.$createdAt}</p>
-                    <p><strong>过期时间:</strong> {sessionInfo.expire}</p>
+                    <h2>sessionInfo</h2>
+                    <p><strong>session ID:</strong> {sessionInfo.$id}</p>
+                    <p><strong>create AT:</strong> {sessionInfo.$createdAt}</p>
+                    <p><strong>expire:</strong> {sessionInfo.expire}</p>
                 </div>
             )}
             {error && <div style={{ color: 'red' }}>{error}</div>}
-            <button onClick={checkCurrentSession}>检查当前会话</button>
+            <button onClick={checkCurrentSession}>check session</button>
         </div>
     );
 }
