@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import OAuthLogin from './OAuthLogin'; // 引入OAuthLogin组件
+import OAuthLogin from './OAuthLogin';
 import './Login.css';
 
 function Login() {
