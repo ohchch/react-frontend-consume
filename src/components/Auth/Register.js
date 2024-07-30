@@ -1,32 +1,37 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Register.css'; // 引入样式文件
+import './Register.css'; 
 
 function Registration() {
+    // State to hold registration data
     const [registerData, setRegisterData] = useState({
         username: '',
         password: '',
         email: ''
     });
 
+    // State to hold message for feedback
     const [message, setMessage] = useState('');
 
+    // Handle changes to the registration form fields
     const handleRegisterChange = (e) => {
         const { name, value } = e.target;
         setRegisterData({ ...registerData, [name]: value });
     };
 
+    // Handle form submission for registration
     const handleRegisterSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent the default form submission behavior
         axios.post('http://localhost:8080/api/users/register', registerData)
             .then(response => {
-                setMessage(response.data.message); // 获取后端返回的信息
+                setMessage(response.data.message); // Set success message from server response
             })
             .catch(error => {
+                // Check if the error response contains a message
                 if (error.response && error.response.data.message) {
                     setMessage(error.response.data.message);
                 } else {
-                    setMessage('Registration failed.');
+                    setMessage('Registration failed.'); // Fallback error message
                 }
             });
     };
@@ -64,7 +69,7 @@ function Registration() {
                 </div>
                 <button type="submit">Register</button>
             </form>
-            {message && <p>{message}</p>}
+            {message && <p>{message}</p>} {/* Display the message if it exists */}
         </div>
     );
 }

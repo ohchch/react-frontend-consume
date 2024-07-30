@@ -1,33 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import { Client, Account } from 'appwrite';
 
+// Initialize Appwrite client
 const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('66a1b4d2002b1711fd39');
+    .setEndpoint('https://cloud.appwrite.io/v1') // Set Appwrite endpoint
+    .setProject('66a1b4d2002b1711fd39'); // Set project ID
 
 const account = new Account(client);
 
 function UserInfoPage() {
+    // State for loading message
     const [loadingMessage, setLoadingMessage] = useState('Loading...');
+    // State for error message
     const [error, setError] = useState('');
+    // State for user information
     const [userInfo, setUserInfo] = useState({
         providerUid: '',
         email: ''
     });
+    // State for session information
     const [sessionInfo, setSessionInfo] = useState(null);
 
     useEffect(() => {
+        // Fetch user info and session info on component mount
         const fetchUserInfoAndSession = async () => {
             try {
+                // Get current session
                 const sessionResponse = await account.getSession('current');
                 console.log('Current session info:', sessionResponse);
 
                 if (sessionResponse && sessionResponse.userId) {
                     const providerUid = sessionResponse.userId;
 
+                    // Get user details
                     const userDetails = await account.get();
                     const email = userDetails.email;
 
+                    // Set user info and session info in state
                     setUserInfo({ providerUid, email });
                     setSessionInfo(sessionResponse);
                 } else {
@@ -42,7 +51,7 @@ function UserInfoPage() {
         };
 
         fetchUserInfoAndSession();
-    }, []);
+    }, []); // Empty dependency array means this effect runs once on mount
 
     return (
         <div className="user-info-container">

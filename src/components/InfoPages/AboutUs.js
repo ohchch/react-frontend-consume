@@ -1,5 +1,5 @@
 import React from 'react';
-import './InfoPages.css'; // 引入样式文件
+import './InfoPages.css'; 
 
 function AboutUs() {
   return (

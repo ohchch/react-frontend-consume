@@ -1,9 +1,9 @@
-import './Home.css'; // 引入样式文件
+import './Home.css'; // Import CSS stylesheet for styling
 
 function Home() {
-  const userId = localStorage.getItem('userId');
-  const username = 'User'; // 假设从后端获取用户信息
-  const showTasksFeature = false; // 设置为 false 以隐藏 Create Tasks 功能
+  const userId = localStorage.getItem('userId'); // Get user ID from local storage
+  const username = 'User'; // Placeholder username (assume retrieved from backend)
+  const showTasksFeature = false; // Set to false to hide Create Tasks feature
 
   return (
     <div className="home-container">
