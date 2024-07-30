@@ -1,0 +1,57 @@
+/* InfoPages.css */
+
+/* 页面容器 */
+.info-page-container {
+    background-color: var(--primary-background);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
+  
+  /* 标题 */
+  .info-page-container h1 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 2em;
+  }
+  
+  /* 段落 */
+  .info-page-container p {
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    
+    
+  }
+  
+  /* 链接 */
+  .info-page-container a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+  
+  .info-page-container a:hover {
+    color: var(--link-hover-color);
+  }
+  
+  .contact-image {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-image a {
+    text-decoration: none;
+  }
+  

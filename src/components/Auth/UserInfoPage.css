@@ -1,0 +1,40 @@
+/* UserInfoPage.css */
+
+/* 页面容器 */
+.user-info-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 标题 */
+  .user-info-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--link-color);
+  }
+  
+  /* 信息块 */
+  .user-info-container p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* 错误消息 */
+  .user-info-container .error {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  /* 加载消息 */
+  .user-info-container .loading {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  

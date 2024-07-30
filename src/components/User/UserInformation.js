@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './UserInformation.css'; // 引入样式文件
 
 function UserInformation() {
     const [user, setUser] = useState(null);
@@ -28,7 +29,7 @@ function UserInformation() {
     }, []);
 
     return (
-        <div>
+        <div className="user-info-container">
             <h1>User Information</h1>
             {message && <p>{message}</p>}
             {user ? (

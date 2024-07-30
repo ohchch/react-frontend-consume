@@ -1,5 +1,4 @@
-import React from 'react';
-import './Home.css';
+import './Home.css'; // 引入样式文件
 
 function Home() {
   const userId = localStorage.getItem('userId');
@@ -14,8 +13,8 @@ function Home() {
         <div className="user-info">
           <h2>Hello, {username}!</h2>
           {showTasksFeature && (
-          <p>You have 5 pending tasks.</p> 
-        )}
+            <p>You have 5 pending tasks.</p>
+          )}
         </div>
       ) : (
         <div className="guest-info">

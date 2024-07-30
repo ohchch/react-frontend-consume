@@ -1,0 +1,32 @@
+/* UserInformation.css */
+
+/* 组件容器 */
+.user-info-container {
+    background-color: var(--primary-background);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  /* 标题 */
+  .user-info-container h1 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* 消息 */
+  .user-info-container p {
+    color: var(--text-color);
+    margin: 0.5rem 0;
+  }
+  
+  /* 强调文本 */
+  .user-info-container strong {
+    color: var(--link-color);
+  }
+  

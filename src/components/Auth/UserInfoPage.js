@@ -45,8 +45,8 @@ function UserInfoPage() {
     }, []);
 
     return (
-        <div>
-            {loadingMessage}
+        <div className="user-info-container">
+            {loadingMessage && <div className="loading">{loadingMessage}</div>}
             <div>
                 <h2>User Info</h2>
                 <p><strong>Provider UID:</strong> {userInfo.providerUid}</p>
@@ -60,7 +60,7 @@ function UserInfoPage() {
                     <p><strong>Expires:</strong> {sessionInfo.expire}</p>
                 </div>
             )}
-            {error && <div style={{ color: 'red' }}>{error}</div>}
+            {error && <div className="error">{error}</div>}
         </div>
     );
 }

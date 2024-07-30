@@ -1,5 +1,6 @@
 import { Client, Account } from "appwrite";
 import React from 'react';
+import './OAuthLogin.css'; 
 
 const client = new Client()
     .setEndpoint('https://cloud.appwrite.io/v1') 
@@ -15,16 +16,21 @@ const handleOAuthLogin = async (provider) => {
             'http://localhost:3000/oauth/failure', 
             []                                  
         );
-        console.log('OAuth login initiated');
+        console.log(`OAuth login initiated with ${provider}`);
     } catch (error) {
-        console.error('OAuth login failed', error);
+        console.error(`OAuth login with ${provider} failed`, error);
     }
 };
 
 const OAuthLogin = () => {
     return (
         <div>
-            <button onClick={() => handleOAuthLogin('github')}>Login with GitHub</button>
+            <button className="oauth-login-button github-button" onClick={() => handleOAuthLogin('github')}>
+                Login with GitHub
+            </button>
+            <button className="oauth-login-button discord-button" onClick={() => handleOAuthLogin('discord')}>
+                Login with Discord
+            </button>
         </div>
     );
 };

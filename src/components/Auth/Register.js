@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Register.css'; // 引入样式文件
 
 function Registration() {
     const [registerData, setRegisterData] = useState({
@@ -31,7 +32,7 @@ function Registration() {
     };
 
     return (
-        <div>
+        <div className="register-container">
             <h2>Register</h2>
             <form onSubmit={handleRegisterSubmit}>
                 <div>
